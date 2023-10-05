@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+    <remote name="redroid" fetch="https://github.com/remote-android/" />
+
+    <!-- remove unused projects -->
+    <remove-project name="platform/prebuilts/bazel/darwin-x86_64" />
+    <remove-project name="platform/prebuilts/clang/host/darwin-x86" />
+    <remove-project name="platform/prebuilts/go/darwin-x86" />
+
+    <!-- Our own components -->
+    <project path="device/redroid" name="device_redroid" groups="redroid" remote="redroid" revision="redroid-13.0.0" />
+    <project path="device/redroid-prebuilts" name="device_redroid-prebuilts" groups="redroid" remote="redroid" revision="master" clone-depth="1" />
+    <project path="hardware/redroid/c2" name="redroid-c2" groups="redroid" remote="redroid" revision="master" />
+    <project path="hardware/redroid/omx" name="redroid-omx" groups="redroid" remote="redroid" revision="master" />
+    <project path="vendor/redroid" name="vendor_redroid" groups="redroid" remote="redroid" revision="master" />
+
+</manifest>
