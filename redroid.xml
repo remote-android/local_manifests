@@ -3,14 +3,34 @@
     <remote name="redroid" fetch="https://github.com/remote-android/" />
 
     <!-- remove unused projects -->
-    <remove-project name="platform/prebuilts/bazel/darwin-x86_64" />
     <remove-project name="platform/prebuilts/clang/host/darwin-x86" />
+    <remove-project name="platform/prebuilts/gcc/darwin-x86/aarch64/aarch64-linux-android-4.9" />
+    <remove-project name="platform/prebuilts/gcc/darwin-x86/arm/arm-linux-androideabi-4.9" />
+    <remove-project name="platform/prebuilts/gcc/darwin-x86/host/i686-apple-darwin-4.2.1" />
+    <remove-project name="platform/prebuilts/gcc/darwin-x86/mips/mips64el-linux-android-4.9" />
+    <remove-project name="platform/prebuilts/gcc/darwin-x86/x86/x86_64-linux-android-4.9" />
+    <remove-project name="platform/prebuilts/gdb/darwin-x86" />
     <remove-project name="platform/prebuilts/go/darwin-x86" />
+    <remove-project name="platform/prebuilts/python/darwin-x86/2.7.5" />
 
     <!-- Our own components -->
-    <project path="device/redroid" name="device_redroid" groups="redroid" remote="redroid" revision="redroid-13.0.0" />
+    <project path="device/redroid" name="device_redroid" groups="redroid" remote="redroid" revision="redroid-10.0.0">
+        <copyfile
+            src="prebuilts/clang/host/linux-x86/clang-r353983c/lib64/clang/9.0.3/lib/linux/libclang_rt.scudo_minimal-aarch64-android.a"
+            dest="prebuilts/clang/host/linux-x86/clang-r353983c/lib64/clang/9.0.3/lib/linux/libclang_rt.scudo_minimal-aarch64-android.a" />
+        <copyfile
+            src="prebuilts/clang/host/linux-x86/clang-r353983c/lib64/clang/9.0.3/lib/linux/libclang_rt.scudo_minimal-arm-android.a"
+            dest="prebuilts/clang/host/linux-x86/clang-r353983c/lib64/clang/9.0.3/lib/linux/libclang_rt.scudo_minimal-arm-android.a" />
+        <copyfile
+            src="prebuilts/clang/host/linux-x86/clang-r353983c/lib64/clang/9.0.3/lib/linux/libclang_rt.scudo_minimal-i686-android.a"
+            dest="prebuilts/clang/host/linux-x86/clang-r353983c/lib64/clang/9.0.3/lib/linux/libclang_rt.scudo_minimal-i686-android.a" />
+        <copyfile
+            src="prebuilts/clang/host/linux-x86/clang-r353983c/lib64/clang/9.0.3/lib/linux/libclang_rt.scudo_minimal-x86_64-android.a"
+            dest="prebuilts/clang/host/linux-x86/clang-r353983c/lib64/clang/9.0.3/lib/linux/libclang_rt.scudo_minimal-x86_64-android.a" />
+    </project>
     <project path="device/redroid-prebuilts" name="device_redroid-prebuilts" groups="redroid" remote="redroid" revision="master" clone-depth="1" />
     <project path="hardware/redroid/c2" name="redroid-c2" groups="redroid" remote="redroid" revision="master" />
+    <project path="hardware/redroid/gatekeeper" name="redroid-gatekeeper" groups="redroid" remote="redroid" revision="master" />
     <project path="hardware/redroid/omx" name="redroid-omx" groups="redroid" remote="redroid" revision="master" />
     <project path="vendor/redroid" name="vendor_redroid" groups="redroid" remote="redroid" revision="master" />
 
